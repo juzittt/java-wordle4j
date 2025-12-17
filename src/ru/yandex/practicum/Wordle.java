@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+
 /*
 в главном классе нам нужно:
     создать лог-файл (он должен передаваться во все классы)
@@ -21,11 +22,11 @@ import java.util.Scanner;
  */
 public class Wordle {
 
+    private static final DateTimeFormatter DATE_TIME_FORMATTER
+            = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss");
     private final WordleGame game;
     private final Scanner scanner;
     private final PrintWriter validationLog;
-    private static final DateTimeFormatter DATE_TIME_FORMATTER
-            = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss");
     private final LocalDateTime dateTime;
 
     public Wordle(PrintWriter sysWriter, PrintWriter valWriter, InputStream in) {
